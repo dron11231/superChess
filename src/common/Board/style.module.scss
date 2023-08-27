@@ -1,0 +1,16 @@
+.board {
+  padding: 15px;
+  border: 15px solid #6f4f3a /* rgb(141, 83, 3) */;
+  width: 484px;
+  height: 484px;
+  border-radius: 5px;
+}
+
+.fields {
+  border: 2px solid rgb(130, 78, 2);
+  width: 480px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,37 @@
+.fieldWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.numberRowPosition {
+  position: absolute;
+  left: -15px;
+  top: 20px;
+}
+
+.charColumnPosition {
+  position: absolute;
+  top: -20px;
+}
+
+.field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  color: rgba(255, 0, 0, 0.445);
+}
+
+.white {
+  background-color: #eeeed5;
+}
+
+.black {
+  background-color: #7d945d;
+}
+
+.selectedFigure {
+  background-color: #94855d;
+}

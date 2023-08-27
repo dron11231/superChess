@@ -1,0 +1,7 @@
+{
+  "Import styles template": {
+    "prefix": "ims",
+    "body": ["import s from './style.module.scss'"],
+    "description": "Import index style module"
+  }
+}
