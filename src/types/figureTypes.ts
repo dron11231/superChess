@@ -6,4 +6,9 @@ export interface IFigure {
 
 export enum EFigureTypes {
   Pawn = 'PAWN',
+  Knight = 'KNIGHT',
+  Elephant = 'ELEPHANT',
+  Rook = 'ROOK',
+  Queen = 'QUEEN',
+  King = 'KING',
 }

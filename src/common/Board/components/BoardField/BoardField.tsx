@@ -1,11 +1,25 @@
-import React, { MouseEventHandler, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { EFigureTypes, IBoardField, IBoardFieldsMap, IFigureInField, TColor } from 'types';
 import classNames from 'classnames';
 import s from './style.module.scss';
-import { PawnFigure } from 'components';
+import {
+  ElephantFigure,
+  KingFigure,
+  KnightFigure,
+  PawnFigure,
+  QuuenFigure,
+  RookFigure,
+} from 'components';
 import { useDispatch } from 'react-redux';
 import { appendFigureInField, moveFigure } from 'redux/reducers/BoardFields';
-import { checkPawnMoveIsCorrect } from 'common/Board/utils';
+import {
+  checkElephantMoveIsCorrect,
+  checkKingMoveIsCorrect,
+  checkKnightMoveIsCorrect,
+  checkPawnMoveIsCorrect,
+  checkQueenMoveIsCorrect,
+  checkRookMoveIsCorrect,
+} from 'common/Board/utils';
 
 interface IStartPositionFiguresMap {
   [key: string]: IFigureInField;
@@ -92,10 +106,95 @@ const startPositionFiguresMap: IStartPositionFiguresMap = {
     figureComponent: PawnFigure,
     figureType: EFigureTypes.Pawn,
   },
+  b1: {
+    color: 'black',
+    figureComponent: KnightFigure,
+    figureType: EFigureTypes.Knight,
+  },
+  g1: {
+    color: 'black',
+    figureComponent: KnightFigure,
+    figureType: EFigureTypes.Knight,
+  },
+  b8: {
+    color: 'white',
+    figureComponent: KnightFigure,
+    figureType: EFigureTypes.Knight,
+  },
+  g8: {
+    color: 'white',
+    figureComponent: KnightFigure,
+    figureType: EFigureTypes.Knight,
+  },
+  c1: {
+    color: 'black',
+    figureComponent: ElephantFigure,
+    figureType: EFigureTypes.Elephant,
+  },
+  f1: {
+    color: 'black',
+    figureComponent: ElephantFigure,
+    figureType: EFigureTypes.Elephant,
+  },
+  c8: {
+    color: 'white',
+    figureComponent: ElephantFigure,
+    figureType: EFigureTypes.Elephant,
+  },
+  f8: {
+    color: 'white',
+    figureComponent: ElephantFigure,
+    figureType: EFigureTypes.Elephant,
+  },
+  a1: {
+    color: 'black',
+    figureComponent: RookFigure,
+    figureType: EFigureTypes.Rook,
+  },
+  h1: {
+    color: 'black',
+    figureComponent: RookFigure,
+    figureType: EFigureTypes.Rook,
+  },
+  a8: {
+    color: 'white',
+    figureComponent: RookFigure,
+    figureType: EFigureTypes.Rook,
+  },
+  h8: {
+    color: 'white',
+    figureComponent: RookFigure,
+    figureType: EFigureTypes.Rook,
+  },
+  d1: {
+    color: 'black',
+    figureComponent: QuuenFigure,
+    figureType: EFigureTypes.Queen,
+  },
+  d8: {
+    color: 'white',
+    figureComponent: QuuenFigure,
+    figureType: EFigureTypes.Queen,
+  },
+  e1: {
+    color: 'black',
+    figureComponent: KingFigure,
+    figureType: EFigureTypes.King,
+  },
+  e8: {
+    color: 'white',
+    figureComponent: KingFigure,
+    figureType: EFigureTypes.King,
+  },
 };
 
 const figureMoveValidatorsMap = {
   [EFigureTypes.Pawn]: checkPawnMoveIsCorrect,
+  [EFigureTypes.Knight]: checkKnightMoveIsCorrect,
+  [EFigureTypes.Elephant]: checkElephantMoveIsCorrect,
+  [EFigureTypes.Rook]: checkRookMoveIsCorrect,
+  [EFigureTypes.Queen]: checkQueenMoveIsCorrect,
+  [EFigureTypes.King]: checkKingMoveIsCorrect,
 };
 
 interface IBoardFieldProps {
