@@ -326,8 +326,6 @@ export const checkKingMoveIsCorrect = (
   positionTo: string,
   boardFieldsMap: IBoardFieldsMap,
 ): boolean => {
-  const [figurePositionChar, figurePositionNumber] = figurePosition.split('');
-  const [positionToChar, positionToNumber] = positionTo.split('');
   const [positionsNumbersDiff, positionsCharsDiff] = calculatePositionsDiff(
     figurePosition,
     positionTo,
